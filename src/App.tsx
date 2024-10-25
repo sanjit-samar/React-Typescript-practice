@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { Users } from "./components/users/users";
+import { Billboard } from "./components/BillBoard/Billboard";
 
 function App() {
+  const handleClick = () => {
+    console.log("clicked");
+  };
+
+  const handleClick2 = (e: React.MouseEvent<HTMLButtonElement>) => {
+    console.log("clicked2", e);
+  };
+
+  const handleChange3 = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log("change",e);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Users />
+      <Billboard
+        handleClick={handleClick}
+        handleClick2={handleClick2}
+        value=""
+        handleChange3={handleChange3}
+      />
     </div>
   );
 }
