@@ -5,8 +5,10 @@ type buttonProps = {
   handleChange3: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
-export const Billboard = (props : buttonProps) => {
-  const {handleClick,handleClick2, value,handleChange3} = props;
+ const Billboard : React.FC<buttonProps >= ({
+  value, handleChange3, handleClick, handleClick2
+}) => {
+
   
   return (
     <div>
@@ -17,3 +19,5 @@ export const Billboard = (props : buttonProps) => {
     </div>
   );
 }
+
+export default Billboard;
